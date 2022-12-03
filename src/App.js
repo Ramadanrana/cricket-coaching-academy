@@ -1,5 +1,6 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Admission from './Admission/Admission';
 import './App.css';
 import About from './Home/About';
 import Contact from './Home/Contact';
@@ -38,6 +39,10 @@ function App() {
         {
           path: '/contact',
           element: <Contact></Contact>
+        },
+        {
+          path: '/add',
+          element: <Admission></Admission>
         },
       ]
     }

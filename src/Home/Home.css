@@ -27,3 +27,21 @@
     border-radius: 15px;
 
 }
+
+.services img {
+    height: 250px;
+    width: 300px;
+    border: none;
+    border-radius: 15px;
+}
+
+.services h2 {
+    height: 80px;
+    width: 250px;
+    color: darkslateblue;
+}
+
+.services p {
+    height: 100px;
+    width: 250px;
+}

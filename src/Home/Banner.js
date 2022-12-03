@@ -12,7 +12,7 @@ const Banner = () => {
                         <div className="max-w-md pb-16 ">
                             <h1 className="mb-5 text-blue-900 text-5xl font-fam font-bold pt-16">Join The Best <br /> Cricket Coaching <br /> In Dhaka</h1>
                             <p className="mb-5 text-xl">In order to be the National team player of bangladesh join ur Academy today.We focus to make your dreams true.We have International coaches and highclass facility which will help you to serv Bangladesh in future.</p>
-                            <Link className='btn btn-primary' to='/signup'>Join Now</Link>
+                            <Link className='btn btn-primary' to='/add'>Join Now</Link>
                         </div>
                     </div>
                 </div>

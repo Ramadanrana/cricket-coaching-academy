@@ -17,6 +17,7 @@ const Navbar = () => {
                         <Link to='/faci'>Our Facilities</Link>
                         <Link to='/about'>About US</Link>
                         <Link to='/contact'>Contact US</Link>
+                        <Link to='/add'>Admission Now</Link>
                         {
                             user?.uid ?
                                 <button onClick={logout}>logout</button>
