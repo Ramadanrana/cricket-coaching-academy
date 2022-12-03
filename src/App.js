@@ -1,6 +1,8 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import About from './Home/About';
+import Facility from './Home/Facility';
 import Home from './Home/Home';
 import Main from './Layout/Main';
 import Login from './Login/Login';
@@ -23,6 +25,14 @@ function App() {
         {
           path: '/signup',
           element: <Signup></Signup>
+        },
+        {
+          path: '/faci',
+          element: <Facility></Facility>
+        },
+        {
+          path: '/about',
+          element: <About></About>
         },
       ]
     }

@@ -16,3 +16,14 @@
 .bg-nav {
     background-color: darkslateblue;
 }
+
+.story img {
+    width: 450px;
+    height: 400px;
+}
+
+.story {
+    border: 2px solid darkslateblue;
+    border-radius: 15px;
+
+}

@@ -14,6 +14,8 @@ const Navbar = () => {
                 <div className="flex-none">
                     <ul className="menu menu-horizontal navbar pr-20 mr-20">
                         <Link to='/'>Home</Link>
+                        <Link to='/faci'>Our Facilities</Link>
+                        <Link to='/about'>About US</Link>
                         {
                             user?.uid ?
                                 <button onClick={logout}>logout</button>
