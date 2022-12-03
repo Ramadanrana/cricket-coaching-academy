@@ -1,0 +1,18 @@
+.cric {
+    height: 600px;
+    border: none;
+}
+
+.op {
+    height: 540px;
+
+}
+
+.font-fam {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(42, 34, 87);
+}
+
+.bg-nav {
+    background-color: darkslateblue;
+}
