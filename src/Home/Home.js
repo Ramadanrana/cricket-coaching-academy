@@ -4,6 +4,8 @@ import './Home.css#';
 import Banner from './Banner';
 import Facility from './Facility';
 import About from './About';
+import Contact from './Contact';
+import Footer from './Footer';
 
 const Home = () => {
     return (
@@ -11,6 +13,8 @@ const Home = () => {
             <Banner></Banner>
             <Facility></Facility>
             <About></About>
+            <Contact></Contact>
+            <Footer></Footer>
 
 
 
