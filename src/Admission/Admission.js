@@ -1,8 +1,37 @@
-import React from 'react';
+import React, { useReducer } from 'react';
+
+const forminfo = (state, event) => {
+    return {
+        ...state,
+        [event.target.name]: event.target.value
+    }
+
+
+}
 
 const Admission = () => {
+    const [formdata, Setformdata] = useReducer(forminfo, {})
     const handlejoin = event => {
+        const form = event.target;
         event.preventDefault();
+        console.log(formdata);
+
+        fetch('http://localhost:5000/admission', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(formdata)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    alert('Your info added');
+                    form.reset();
+                }
+            })
+
     }
     return (
         <div>
@@ -17,7 +46,7 @@ const Admission = () => {
                                 <span className="label-text text-xl font-bold">What is your Name?</span>
 
                             </label>
-                            <input name='name' type="text " placeholder="your name" className="input input-bordered input-primary w-full max-w-xs" />
+                            <input onChange={Setformdata} name='name' type="text " placeholder="your name" className="input input-bordered input-primary w-full max-w-xs" />
 
                         </div>
                         <div className="form-control ml-24 w-full max-w-xs">
@@ -25,7 +54,7 @@ const Admission = () => {
                                 <span className="label-text text-xl font-bold">What is Father Name?</span>
 
                             </label>
-                            <input name='father' type="text " placeholder="father name" className="input input-bordered input-primary w-full max-w-xs" />
+                            <input onChange={Setformdata} name='father' type="text " placeholder="father name" className="input input-bordered input-primary w-full max-w-xs" />
 
                         </div>
                         <div className="form-control ml-24 w-full max-w-xs">
@@ -33,7 +62,7 @@ const Admission = () => {
                                 <span className="label-text text-xl font-bold">What is Mother Name?</span>
 
                             </label>
-                            <input name='mother' type="text " placeholder="Phone Number" className="input input-bordered input-primary w-full max-w-xs" />
+                            <input onChange={Setformdata} name='mother' type="text " placeholder="Phone Number" className="input input-bordered input-primary w-full max-w-xs" />
 
                         </div>
 
@@ -43,7 +72,7 @@ const Admission = () => {
 
                             </label>
 
-                            <input name='age' type="text " placeholder="age" className="input input-bordered input-primary w-full max-w-xs" />
+                            <input onChange={Setformdata} name='age' type="text " placeholder="age" className="input input-bordered input-primary w-full max-w-xs" />
 
 
 
@@ -54,7 +83,7 @@ const Admission = () => {
 
                             </label>
 
-                            <input name='phone' type="text " placeholder="Phone Number" className="input input-bordered input-primary w-full max-w-xs" />
+                            <input onChange={Setformdata} name='phone' type="text " placeholder="Phone Number" className="input input-bordered input-primary w-full max-w-xs" />
 
 
 
@@ -65,7 +94,7 @@ const Admission = () => {
 
                             </label>
 
-                            <input name='address' type="text " placeholder="address" className="input input-bordered input-primary w-full max-w-xs" />
+                            <input onChange={Setformdata} name='address' type="text " placeholder="address" className="input input-bordered input-primary w-full max-w-xs" />
 
 
 

@@ -5,7 +5,7 @@ import Allservices from './Allservices';
 const Facility = () => {
     const [facilities, setFacilities] = useState([]);
     useEffect(() => {
-        fetch('service.json')
+        fetch('http://localhost:5000/cricket')
             .then(res => res.json())
             .then(data => setFacilities(data))
     }, [])

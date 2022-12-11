@@ -1,16 +1,41 @@
 import React from 'react';
+import { useReducer } from 'react';
+
+
+const messageform = (state, event) => {
+
+    return {
+        ...state,
+        [event.target.name]: event.target.value
+    }
+
+}
 
 const Contact = () => {
+    const [messageinfo, setMessageinfo] = useReducer(messageform, {})
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
-        const first = form.first.value;
-        const last = form.last.value;
-        const email = form.email.value;
-        const phone = form.phone.value;
-        const message = form.message.value;
-        console.log(first, last, email, phone, message);
-        form.reset();
+
+
+        console.log(messageinfo);
+
+        fetch('http://localhost:5000/message', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(messageinfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    alert('Your info added');
+                    form.reset();
+                }
+            })
+
     }
     return (
         <div>
@@ -23,8 +48,8 @@ const Contact = () => {
 
                         </label>
                         <div className='grid lg:grid-cols-2 gap-8 '>
-                            <input name='first' type="text " placeholder="First Name" className="input input-bordered input-primary w-full max-w-xs" />
-                            <input name='last' type="text" placeholder="Last Name" className="input input-bordered input-primary w-full max-w-xs" />
+                            <input onChange={setMessageinfo} name='first name' type="text " placeholder="First Name" className="input input-bordered input-primary w-full max-w-xs" />
+                            <input onChange={setMessageinfo} name='last name' type="text" placeholder="Last Name" className="input input-bordered input-primary w-full max-w-xs" />
                         </div>
 
                     </div>
@@ -34,7 +59,7 @@ const Contact = () => {
 
                         </label>
 
-                        <input name='email' type="email " placeholder="Email" className="input input-bordered input-primary w-full max-w-xs" />
+                        <input onChange={setMessageinfo} name='email' type="email " placeholder="Email" className="input input-bordered input-primary w-full max-w-xs" />
 
 
 
@@ -45,7 +70,7 @@ const Contact = () => {
 
                         </label>
 
-                        <input name='phone' type="text " placeholder="Phone Number" className="input input-bordered input-primary w-full max-w-xs" />
+                        <input onChange={setMessageinfo} name='phone' type="text " placeholder="Phone Number" className="input input-bordered input-primary w-full max-w-xs" />
 
 
 
@@ -56,7 +81,7 @@ const Contact = () => {
 
                         </label>
 
-                        <textarea name='message' className="textarea textarea-primary" placeholder="Your Message"></textarea>
+                        <textarea onChange={setMessageinfo} name='message' className="textarea textarea-primary" placeholder="Your Message"></textarea>
 
 
 

@@ -8,6 +8,7 @@ import Facility from './Home/Facility';
 import Home from './Home/Home';
 import Main from './Layout/Main';
 import Login from './Login/Login';
+import Privateroute from './Privateroute/Privateroute';
 import Signup from './Signup/Signup';
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
         },
         {
           path: '/add',
-          element: <Admission></Admission>
+          element: <Privateroute><Admission></Admission></Privateroute>
         },
       ]
     }
