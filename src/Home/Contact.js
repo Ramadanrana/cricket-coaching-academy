@@ -48,8 +48,8 @@ const Contact = () => {
 
                         </label>
                         <div className='grid lg:grid-cols-2 gap-8 '>
-                            <input onChange={setMessageinfo} name='first name' type="text " placeholder="First Name" className="input input-bordered input-primary w-full max-w-xs" />
-                            <input onChange={setMessageinfo} name='last name' type="text" placeholder="Last Name" className="input input-bordered input-primary w-full max-w-xs" />
+                            <input onChange={setMessageinfo} name='firstname' type="text " placeholder="First Name" className="input input-bordered input-primary w-full max-w-xs" />
+                            <input onChange={setMessageinfo} name='lastname' type="text" placeholder="Last Name" className="input input-bordered input-primary w-full max-w-xs" />
                         </div>
 
                     </div>

@@ -1,8 +1,11 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Adminmessage from './Admin/Adminmessage';
+import Dashboard from './Admin/Dashboard';
 import Admission from './Admission/Admission';
 import './App.css';
 import About from './Home/About';
+
 import Contact from './Home/Contact';
 import Facility from './Home/Facility';
 import Home from './Home/Home';
@@ -40,6 +43,14 @@ function App() {
         {
           path: '/contact',
           element: <Contact></Contact>
+        },
+        {
+          path: '/message',
+          element: <Privateroute><Adminmessage></Adminmessage></Privateroute>
+        },
+        {
+          path: '/dash',
+          element: <Privateroute><Dashboard></Dashboard></Privateroute>
         },
         {
           path: '/add',
