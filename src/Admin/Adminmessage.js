@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { toast } from 'react-hot-toast';
 
 import './ad.css';
 import { useState } from 'react';
@@ -32,6 +33,9 @@ const Adminmessage = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
+                    toast.error('Deleted Successfully', {
+                        duration: 2000,
+                    })
                     refetch();
 
                 }
@@ -48,7 +52,7 @@ const Adminmessage = () => {
             <div>
 
                 <div>
-                    <table className="table w-10/12 mx-auto">
+                    <table className="table ta w-10/12 mx-auto">
 
                         <thead className='bg-lime-300' >
                             <tr  >
@@ -65,8 +69,8 @@ const Adminmessage = () => {
 
 
                             {
-                                messages.map((m, i) => <tr className='tdd'>
-                                    <th className='tddd' >{i + 1}</th>
+                                messages.map((m, i) => <tr className='tdd ta'>
+                                    <th className='tddd ta' >{i + 1}</th>
 
                                     <td >{m.firstname} {m.lastname}</td>
                                     <td >{m.email}</td>

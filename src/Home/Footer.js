@@ -4,7 +4,7 @@ import { FaEnvelope, FaPhone, FaHome } from 'react-icons/fa';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-black text-neutral-content pl-36">
+            <footer className="footer p-10 bg-black text-neutral-content lg:pl-36">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">International Coaches</a>
@@ -12,7 +12,7 @@ const Footer = () => {
                     <a className="link link-hover">Cricket Equipment</a>
                     <a className="link link-hover">National Mentor</a>
                 </div>
-                <div>
+                <div className='com'>
                     <span className="footer-title">Company</span>
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>

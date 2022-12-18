@@ -1,4 +1,5 @@
 
+import { Toaster } from 'react-hot-toast';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Adminmessage from './Admin/Adminmessage';
 import Dashboard from './Admin/Dashboard';
@@ -63,6 +64,7 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>
+      <Toaster></Toaster>
 
     </div>
   );

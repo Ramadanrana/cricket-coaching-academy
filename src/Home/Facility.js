@@ -15,7 +15,7 @@ const Facility = () => {
     return (
         <div>
             <h1 className="text-center mb-16 mt-8 text-primary font-bolder text-5xl">Our Facilities</h1>
-            <div className='grid gap-8 lg:grid-cols-3 mx-16'>
+            <div className='grid gap-8 lg:grid-cols-3 lg:mx-16'>
 
                 {
                     facilities.map(facility => <Allservices facility={facility}></Allservices>)

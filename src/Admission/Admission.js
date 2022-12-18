@@ -1,4 +1,6 @@
 import React, { useReducer } from 'react';
+import { toast } from 'react-hot-toast';
+
 
 const forminfo = (state, event) => {
     return {
@@ -27,7 +29,10 @@ const Admission = () => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    alert('Your info added');
+                    toast.success('Your info added', {
+                        duration: 2000,
+                        position: 'top-center',
+                    })
                     form.reset();
                 }
             })
@@ -39,9 +44,9 @@ const Admission = () => {
                 <h1 className="text-center mb-8 mt-8 text-primary font-bolder text-5xl">Join Now</h1>
             </div>
             <div>
-                <div className='lg: ml-96'>
+                <div className='lg:ml-96'>
                     <form onSubmit={handlejoin}>
-                        <div className="form-control ml-24 w-full max-w-xs">
+                        <div className="form-control lg:ml-24 ml-4 lg:w-full lg:max-w-xs">
                             <label className="label">
                                 <span className="label-text text-xl font-bold">What is your Name?</span>
 
@@ -49,7 +54,7 @@ const Admission = () => {
                             <input onChange={Setformdata} name='name' type="text " placeholder="your name" className="input input-bordered input-primary w-full max-w-xs" />
 
                         </div>
-                        <div className="form-control ml-24 w-full max-w-xs">
+                        <div className="form-control lg:ml-24 ml-4 lg:w-full lg:max-w-xs">
                             <label className="label">
                                 <span className="label-text text-xl font-bold">What is Father Name?</span>
 
@@ -57,7 +62,7 @@ const Admission = () => {
                             <input onChange={Setformdata} name='father' type="text " placeholder="father name" className="input input-bordered input-primary w-full max-w-xs" />
 
                         </div>
-                        <div className="form-control ml-24 w-full max-w-xs">
+                        <div className="form-control lg:ml-24 ml-4 lg:w-full lg:max-w-xs">
                             <label className="label">
                                 <span className="label-text text-xl font-bold">What is Mother Name?</span>
 
@@ -66,7 +71,7 @@ const Admission = () => {
 
                         </div>
 
-                        <div className="form-control ml-24 w-full max-w-xs">
+                        <div className="form-control lg:ml-24 ml-4 lg:w-full lg:max-w-xs">
                             <label className="label">
                                 <span className="label-text text-xl font-bold">Your Age</span>
 
@@ -77,7 +82,7 @@ const Admission = () => {
 
 
                         </div>
-                        <div className="form-control ml-24 w-full max-w-xs">
+                        <div className="form-control lg:ml-24 ml-4 lg:w-full lg:max-w-xs">
                             <label className="label">
                                 <span className="label-text text-xl font-bold">Your Phone Number</span>
 
@@ -88,7 +93,7 @@ const Admission = () => {
 
 
                         </div>
-                        <div className="form-control ml-24 w-full max-w-xs">
+                        <div className="form-control lg:ml-24 ml-4 lg:w-full lg:max-w-xs">
                             <label className="label">
                                 <span className="label-text text-xl font-bold">Your Address</span>
 

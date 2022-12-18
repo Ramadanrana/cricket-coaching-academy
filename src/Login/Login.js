@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const { signin, providerlogin } = useContext(AuthContext);
@@ -29,6 +30,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast('login succesfull')
 
                 navigate('/');
             })
@@ -41,7 +43,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero mx-16">
+            <div className="hero lg:mx-16">
                 <div className="hero-content flex-col ">
                     <div className="text-center">
                         <h1 className="text-5xl font-bold mt-16">Login now!</h1>

@@ -1,3 +1,67 @@
 .navbar a {
     margin-right: 20px;
 }
+
+.nava a {
+    display: block;
+    text-align: left;
+    margin-left: 40px;
+    background-color: cadetblue;
+    color: white;
+    width: 40%;
+    padding: 6px 30px;
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 770px) {
+    .bignav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+
+    .cc {
+        margin-left: 10px;
+    }
+
+    .nava a {
+        display: block;
+    }
+
+    .op {
+        margin-bottom: 100px;
+
+    }
+
+    .addbtn {
+        display: none;
+    }
+
+    .services {
+        margin-left: 40px;
+    }
+
+    .story img {
+        display: none;
+    }
+
+    .story {
+        margin-right: 70px;
+    }
+
+    .ta {
+        width: 30px;
+    }
+
+
+
+
+
+
+}

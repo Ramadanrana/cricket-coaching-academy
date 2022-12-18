@@ -24,7 +24,7 @@ const Signup = () => {
     }
     return (
         <div>
-            <div className="hero mx-16">
+            <div className="hero lg:mx-16">
                 <div className="hero-content flex-col ">
                     <div className="text-center">
                         <h1 className="text-5xl font-bold mt-8">Signup Now!</h1>

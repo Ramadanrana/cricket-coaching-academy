@@ -1,5 +1,6 @@
 import React from 'react';
 import { useReducer } from 'react';
+import { toast } from 'react-hot-toast';
 
 
 const messageform = (state, event) => {
@@ -31,7 +32,7 @@ const Contact = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Your info added');
+                    toast.success('Your info added successfully');
                     form.reset();
                 }
             })
@@ -40,9 +41,9 @@ const Contact = () => {
     return (
         <div>
             <h1 className="text-center mb-8 mt-8 text-primary font-bolder text-5xl">Send US a Message</h1>
-            <div className='lg: ml-96'>
+            <div className='lg:ml-96'>
                 <form onSubmit={handleSubmit}>
-                    <div className="form-control ml-24 w-full max-w-xs">
+                    <div className="form-control lg:ml-24 ml-8 lg:w-full lg:max-w-xs">
                         <label className="label">
                             <span className="label-text">What is your name?</span>
 
@@ -53,7 +54,7 @@ const Contact = () => {
                         </div>
 
                     </div>
-                    <div className="form-control ml-24 w-full max-w-xs">
+                    <div className="form-control lg:ml-24 ml-8 lg:w-full lg:max-w-xs">
                         <label className="label">
                             <span className="label-text">Your Email</span>
 
@@ -64,7 +65,7 @@ const Contact = () => {
 
 
                     </div>
-                    <div className="form-control ml-24 w-full max-w-xs">
+                    <div className="form-control lg:ml-24 ml-8 lg:w-full lg:max-w-xs">
                         <label className="label">
                             <span className="label-text">Your Phone Number</span>
 
@@ -75,18 +76,18 @@ const Contact = () => {
 
 
                     </div>
-                    <div className="form-control ml-24 w-full max-w-xs">
+                    <div className="form-control lg:ml-24 ml-8 lg:w-full lg:max-w-xs">
                         <label className="label">
                             <span className="label-text">Your Message</span>
 
                         </label>
 
-                        <textarea onChange={setMessageinfo} name='message' className="textarea textarea-primary" placeholder="Your Message"></textarea>
+                        <textarea onChange={setMessageinfo} name='message' className="textarea textarea-primary mr-10 lg:mr-0" placeholder="Your Message"></textarea>
 
 
 
                     </div>
-                    <input className='btn btn-primary my-4 mr-96 ml-4 px-32 py-5' type="submit" value="Submit" />
+                    <input className='btn btn-primary my-4 mr-96 ml-8 lg:ml-4 px-32 py-5' type="submit" value="Submit" />
                 </form>
             </div>
         </div>

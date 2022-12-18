@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useState } from 'react';
 import Dashboardmodal from './Dashboardmodal';
+import { toast } from 'react-hot-toast'
 
 const Dashboard = () => {
 
@@ -22,6 +23,10 @@ const Dashboard = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
+                    toast.error('Deleted Successfully', {
+                        duration: 2000,
+                        position: 'top-center',
+                    })
                     refetch();
                 }
             })
@@ -30,8 +35,9 @@ const Dashboard = () => {
     return (
         <div>
             <h1 className='text-3xl text-center text-blue-400 py-8' >All Application</h1>
+
             <div className="overflow-x-auto">
-                <table className="table-fixed w-10/12 mx-auto">
+                <table className="lg:table-fixed table-normal w-10/12 mx-auto">
 
                     <thead>
                         <tr className='bg-blue-300'>
